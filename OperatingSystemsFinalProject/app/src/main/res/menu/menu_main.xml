@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 左上角的目錄按鈕 -->
+    <item
+        android:id="@+id/action_menu"
+        android:icon="@drawable/icon_gps"
+        android:title="Menu"
+        android:showAsAction="always" />
+
+    <!-- 會顯示在操作列 -->
+    <item
+        android:id="@+id/action_search"
+        android:title="Search"
+        android:showAsAction="always" />
+
+    <!-- 會顯示在三個點點的溢出選單 -->
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        android:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:title="About"
+        android:showAsAction="never" />
+</menu>

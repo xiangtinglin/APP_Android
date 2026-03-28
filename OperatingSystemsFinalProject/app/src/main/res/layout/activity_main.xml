@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <!-- 中間內容佈局 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- GLSurfaceView 用於顯示 3D 圖形或其他內容 -->
+        <android.opengl.GLSurfaceView
+            android:id="@+id/glSurfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <!-- 滑動區域 -->
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="95dp"
+            android:scrollbars="vertical">
+
+            <!-- 滑動內容 (例如：長文字) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- 主要內容佈局 -->
+        <include layout="@layout/content_main" />
+
+        <!-- 底部 FloatingActionButton -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginBottom="16dp"
+            app:srcCompat="@android:drawable/ic_dialog_email" />
+
+        <!-- 底部 Banner -->
+        <ImageView
+            android:id="@+id/bannerBottom"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom"
+            android:contentDescription="@string/banner_down_desc"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner_down" />
+
+        <!-- 底部的 Home 按鈕 -->
+        <ImageView
+            android:id="@+id/home_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/icon_home"
+            android:contentDescription="Home"
+            />
+
+<!--        &lt;!&ndash;  底部的 Refresh 按鈕 &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/refresh_button"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_gravity="bottom|start"-->
+<!--            android:layout_marginStart="36dp"-->
+<!--            android:layout_marginBottom="12dp"-->
+<!--            android:src="@drawable/icon_refresh"-->
+<!--            android:contentDescription="Refresh"-->
+<!--            />-->
+
+<!--        &lt;!&ndash; 底部的 Search 按鈕&ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/search_button"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_gravity="bottom|end"-->
+<!--            android:layout_marginEnd="36dp"-->
+<!--            android:layout_marginBottom="12dp"-->
+<!--            android:src="@drawable/icon_search"-->
+<!--            android:contentDescription="Search"-->
+<!--            />-->
+
+
+    </FrameLayout>
+
+    <!-- 頂部 Banner -->
+    <ImageView
+        android:id="@+id/bannerTop"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_gravity="top"
+        android:contentDescription="@string/banner_desc"
+        android:scaleType="centerCrop"
+        android:src="@drawable/banner" />
+
+    <!-- 工具列 -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+
+    <!-- 中間內容佈局 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- GLSurfaceView 用於顯示 3D 圖形或其他內容 -->
+        <android.opengl.GLSurfaceView
+            android:id="@+id/glSurfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- 滑動區域 -->
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="95dp"
+            android:scrollbars="vertical"
+            android:background="@android:color/white"
+            >
+
+            <!-- 滑動內容 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|top"
+                    android:layout_marginTop="10dp">
+
+                    <!-- 動態切換顯示的圖片 -->
+                    <VideoView
+                        android:id="@+id/videoView_progress"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="250dp"
+                        android:layout_height="200dp"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/progress_videoView_egg"
+                        android:scaleType="centerCrop" />
+
+                    <!-- 進度條 -->
+                    <ProgressBar
+                        android:id="@+id/Status_progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_gravity="center"
+                        android:max="11"
+                        android:progress="0"
+                        android:visibility="visible" />
+                </FrameLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- 測試進度按鈕 -->
+                    <Button
+                        android:id="@+id/textViewProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="測試進度 0/11項"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="30dp" />
+
+                    <!-- Refresh 按鈕 -->
+                    <Button
+                        android:id="@+id/buttonResetProgress"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/icon_refresh"
+                        android:contentDescription="Refresh"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/textViewProgress"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <!-- 檢測項目標題 -->
+                <TextView
+                    android:id="@+id/textViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|top"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/kopub_batang"
+                    android:paddingBottom="8dp"
+                    android:text="【 Detection｜檢測項目 】"
+                    android:textColor="#4B4B4B"
+                    android:textSize="28sp" />
+
+                <!-- 新增空白區段 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@android:color/transparent" />
+
+
+                <!-- 功能按鈕排列 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <ImageButton
+                        android:id="@+id/buttonPhoneInformation"
+                        style="@style/RoundButtonSize"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/phone_infor"
+                        android:text="手機資訊"
+                        android:textColor="#ffffff" />
+
+                    <ImageButton
+                        android:id="@+id/buttonReadBattery"
+                        style="@style/RoundButtonSize"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/icon_battery"
+                        android:text="讀取電池資訊" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <ImageButton
+                        android:id="@+id/buttonTestScreen"
+                        style="@style/RoundButtonSize"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/icon_screen_test"
+                        android:text="測試螢幕" />
+
+                    <ImageButton
+                        android:id="@+id/buttonSoundTest"
+                        style="@style/RoundButtonSize"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/icon_microphone"
+                        android:text="測試麥克風" />
+
+                    <ImageButton
+                        android:id="@+id/buttonVibrateTest"
+                        style="@style/RoundButtonSize"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/icon_vibrate"
+                        android:text="測試震動" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <ImageButton
+                        android:id="@+id/buttonGPSTest"
+                        style="@style/RoundButtonSize"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/icon_gps"
+                        android:text="測試GPS" />
+
+                    <ImageButton
+                        android:id="@+id/buttonReadCPU"
+                        style="@style/RoundButtonSize"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/icon_cpu_info"
+                        android:text="讀取CPU資訊" />
+
+                    <ImageButton
+                        android:id="@+id/buttonTestCPUPerformance"
+                        style="@style/RoundButtonSize"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/icon_cpu_performance_test"
+                        android:text="CPU Performance 測試" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <ImageButton
+                        android:id="@+id/buttonEthernetSpeed"
+                        style="@style/RoundButtonSize"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/icon_network_speed"
+                        android:text="測試網路速度" />
+
+                    <ImageButton
+                        android:id="@+id/buttonReadsdcard"
+                        style="@style/RoundButtonSize"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/icon_sd_info"
+                        android:text="讀取SD卡資訊" />
+
+                    <ImageButton
+                        android:id="@+id/buttonReadSim"
+                        style="@style/RoundButtonSize"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/icon_sim"
+                        android:text="讀取SIM資訊" />
+                </LinearLayout>
+
+
+                <!-- 新增空白區段 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@android:color/transparent" />
+
+
+                <!-- 廣告區 -->
+                <VideoView
+                    android:id="@+id/videoView_ad"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/image_desc"
+                    android:scaleType="centerCrop" />
+
+                <!-- 新增空白區段 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@android:color/transparent" />
+
+                <!-- 圖片區 -->
+                <ImageView
+                    android:id="@+id/imageViewDeveloper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/image_desc"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/developer" />
+
+
+                <!-- 新增空白區段 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
