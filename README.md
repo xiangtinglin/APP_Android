@@ -323,8 +323,3 @@
   https://docs.google.com/presentation/d/1oS2mVt0Qes8Ev2nMNKOJo23qGeT9TbSn_rzbvZtV-mA/edit?usp=drive_link  
 
 ---
-
-
-- Final report
-- Oral presentation slides
-- GitHub README / project notes
