@@ -309,6 +309,22 @@
 
 ## 📎 References / Source Materials
 
+---
+
+## 🌐 Resources / Demo
+
+- 📦 **Project Package（完整專案）**  
+  https://drive.google.com/drive/folders/1TYIGh2rJy3fZPL82bS1jHdFaj0vmPPoF?usp=sharing  
+
+- 🎥 **Demo Video（操作展示）**  
+  https://drive.google.com/file/d/1S8bs7YEn3jKwhUw3jo6JPsZjp791hxTD/view?usp=drive_link  
+
+- 📊 **Project Slides（專案簡報）**  
+  https://docs.google.com/presentation/d/1oS2mVt0Qes8Ev2nMNKOJo23qGeT9TbSn_rzbvZtV-mA/edit?usp=drive_link  
+
+---
+
+
 - Final report
 - Oral presentation slides
 - GitHub README / project notes
